@@ -3,7 +3,7 @@ import { Alert, Button, SectionList, Image,
 	TouchableOpacity, StyleSheet, Text,
 	TextInput, View, Dimensions, FlatList } from 'react-native';
 import logo from './assets/logo.png';
-// import Pdf from 'react-native-pdf';
+import PDFView from 'react-native-view-pdf';
 
 const DATA = [
 	{title: 'Disease Prevention', data:['item1']},
