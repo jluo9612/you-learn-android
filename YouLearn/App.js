@@ -3,7 +3,6 @@ import { Alert, Button, SectionList, Image,
 	TouchableOpacity, StyleSheet, Text,
 	TextInput, View, Dimensions, FlatList } from 'react-native';
 import logo from './assets/logo.png';
-import PDFView from 'react-native-view-pdf';
 
 const DATA = [
 	{title: 'Disease Prevention', data:['item1']},
@@ -25,7 +24,6 @@ function Item({ title }) {
 
 export default class App extends Component {
   	render () {
-  		//const source = {uri: "https://drive.google.com/drive/u/1/folders/1yq9XD0w5PkmPwKrKamabsuqbot_jjE_f"};
 	  	return (
 	    	<View style={styles.container}>
 	    		<View style={styles.rowContainer}>
@@ -38,6 +36,7 @@ export default class App extends Component {
 	          	<View style={styles.rowContainer}>
 	          		<TextInput style={styles.search} placeholder="Search"/>
 	          	</View>
+	           	
 	          	<View style={styles.rowContainer}>
 	          		<SectionList
 						sections={DATA}
