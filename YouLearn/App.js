@@ -10,21 +10,28 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const DATA = [
-	{title: 'Disease Prevention', data:['item1']},
-	{title: 'Feminine Health', data:['item1']},
-	{title: 'Life Skills', data:['item1']},
+	{title: 'Disease Prevention', data:['Cholera Prevention', 'Diabetes', 'Leishmaniasis', 'Malaria', 'Pneumonia',
+	'Polio', 'Smallpox', 'STI Prevention', 'Tetnus', 'Tuberculosis Droplet', 'Tuberculosis', 'Zika Prevention']},
+	{title: 'Feminine Health', data:['Hedhi Help', 'Hedhi Help Kiswahili', 'Hedhi Help Swahili', 'Menstrual Hygiene',
+	'Rose’s Washable Sanitary Pads 2019', 'Rose’s Washable Sanitary Pads 2018', 'Sustainable Solutions']},
+	{title: 'Life Skills', data:['A Budget is easy as 123', 'Agriculture 101', 'Expressing Emotions Through Art',
+	'Gender Club Formation Guide']},
 	{title: 'Promo Videos', data:['item1']},
-	{title: 'Sexual Education', data:['item1']},
-	{title: 'WASH', data:['item1']},
-	{title: 'ASL Dictionary', data:['item1']},
+	{title: 'Sexual Education', data:['Boys Puberty Pamphlet', 'Girls Puberty Pamphlet', 'Puberty Coloring Book']},
+	{title: 'WASH', data:['Tippy Tap Project', 'Coloring WASH Booklet', 'WASH Program', 'Food Safety']},
+	{title: 'ASL Dictionary', data:['ASL Dictionary']},
 ];
 
-function Item({ title }) {
-  return (
-    <View style={styles.item}>
-      <Text style={styles.item}>{title}</Text>
-    </View>
-  );
+function SectionListItems({ title, navigation }) {
+	return (
+		<View style={styles.item}>
+      		<Button
+      			title={ title }
+    			style={ styles.item }
+      			onPress={() => navigation.navigate('PDFScreen')}
+      		/>
+    	</View>
+	);
 }
 
 function HomeScreen({ navigation }) {
@@ -46,7 +53,7 @@ function HomeScreen({ navigation }) {
           		<SectionList
 					sections={DATA}
 					keyExtractor={(item, index) => item + index}
-    				renderItem={({ item }) => <Item title={item} />}
+    				renderItem={({ item }) => <SectionListItems title={item} navigation={navigation}/>}
     				renderSectionHeader={({ section: { title } }) =>
     					(<Text style={styles.sectionHeader}>{title}</Text>)}
 				/>
