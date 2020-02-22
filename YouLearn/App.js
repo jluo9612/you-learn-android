@@ -83,8 +83,10 @@ const Media_DATA = [
 ];
 
 function SectionListPDFItems({ item, navigation }) {
+  console.log("item.url:", item.url);
+  // const [item.title, item.url] = React.useState('');
 	return (
-		<View style={styles.item}>
+		<View style={ styles.item }>
   		<Button
   			title={ item.title }
         style={ styles.item }
@@ -95,8 +97,9 @@ function SectionListPDFItems({ item, navigation }) {
 }
 
 function SectionListMediaItems({ item, navigation }) {
+  console.log("item.url", item.url);
 	return (
-		<View style={styles.item}>
+		<View style={ styles.item }>
   		<Button
   			title={ item.title }
         style={ styles.item }
@@ -130,6 +133,7 @@ function HomeScreen({ navigation }) {
 }
 
 function FileScreen({ navigation }) {
+  console.log("PDF_DATA:", PDF_DATA);
 	return (
 		<View style={styles.pdf}>
 			<View style={styles.rowContainer}>
@@ -161,19 +165,23 @@ function MediaScreen({ navigation }) {
 	);
 }
 
-function PDFScreen({ url }) {
-	return (
+function PDFScreen({ route }) {
+	const { url } = route.params;
+  console.log("url:", url);
+  return (
 		<View style={styles.pdf}>
 			<PDFReader
 				source={{
-					uri: url,
+					uri: url
 				}}
 			/>
 		</View>
 	);
 }
 
-function VideoScreen({ url }) {
+function VideoScreen({ route }) {
+  const { url } = route.params;
+  console.log("url:", url);
 	return (
 		<View style={styles.video}>
   		<Video
