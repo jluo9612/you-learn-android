@@ -10,65 +10,122 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Video } from 'expo-av';
 
+const diseasePrevention = [
+  {title: 'Cholera Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Diabetes', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Leishmaniasis', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Malaria', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Cholera Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Pneumonia', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Polio', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Smallpox', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'STI Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Tetanus', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Tuberculosis Droplet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Tuberculosis', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Zika Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+];
+
+const feminineHealth = [
+  {title: 'Hedhi Help', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Hedhi Help Kiswahili', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Hedhi Help Swahili', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Menstrual Hygiene', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Rose’s Washable Sanitary Pads 2019', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Rose’s Washable Sanitary Pads 2018', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Sustainable Solutions', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+];
+
+const lifeSkills = [
+  {title: 'A Budget is easy as 123', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Agriculture 101', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Expressing Emotions Through Art', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Gender Club Formation Guide', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+];
+
+const sexualEducation = [
+  {title: 'Boys Puberty Pamphlet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Girls Puberty Pamphlet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Puberty Coloring Book', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+];
+
+const wash = [
+  {title: 'Tippy Tap Project', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Coloring WASH Booklet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'WASH Program', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Food Safety', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+];
+
+const asl = [{title: 'ASL Dictionary', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'}];
+
+const promoPDF = [
+  {title: 'Improving Healthcare Knowledge with Innovative Technology', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+];
+
+const promoVideos = [
+  {title: 'Breaking Barriers', url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'},
+  {title: 'Leaving No One Behind', url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'},
+  {title: 'Rose Empowers Medium', url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'},
+];
+
 const PDF_DATA = [
-	{title: 'Disease Prevention', data:['Cholera Prevention', 'Diabetes', 'Leishmaniasis', 'Malaria', 'Pneumonia',
-	'Polio', 'Smallpox', 'STI Prevention', 'Tetanus', 'Tuberculosis Droplet', 'Tuberculosis', 'Zika Prevention']},
-	{title: 'Feminine Health', data:['Hedhi Help', 'Hedhi Help Kiswahili', 'Hedhi Help Swahili', 'Menstrual Hygiene',
-	'Rose’s Washable Sanitary Pads 2019', 'Rose’s Washable Sanitary Pads 2018', 'Sustainable Solutions']},
-	{title: 'Life Skills', data:['A Budget is easy as 123', 'Agriculture 101', 'Expressing Emotions Through Art',
-	'Gender Club Formation Guide']},
-	{title: 'Sexual Education', data:['Boys Puberty Pamphlet', 'Girls Puberty Pamphlet', 'Puberty Coloring Book']},
-	{title: 'WASH', data:['Tippy Tap Project', 'Coloring WASH Booklet', 'WASH Program', 'Food Safety']},
-	{title: 'ASL Dictionary', data:['ASL Dictionary']},
+	{title: 'Disease Prevention', data: diseasePrevention},
+	{title: 'Feminine Health', data: feminineHealth},
+	{title: 'Life Skills', data: lifeSkills},
+	{title: 'Sexual Education', data: sexualEducation},
+  {title: 'Promo', data: promoPDF},
+	{title: 'WASH', data: wash},
+	{title: 'ASL Dictionary', data: asl},
 ];
 
 const Media_DATA = [
-	{title: 'Promo Videos', data:['item1']},
+	{title: 'Promo Videos', data: promoVideos},
 ];
 
-function SectionListPDFItems({ title, navigation }) {
+function SectionListPDFItems({ item, navigation }) {
 	return (
 		<View style={styles.item}>
-      		<Button
-      			title={ title }
-                style={ styles.item }
-      			onPress={() => navigation.navigate('PDFScreen')}
-      		/>
-    	</View>
+  		<Button
+  			title={ item.title }
+        style={ styles.item }
+  			onPress={() => navigation.navigate('PDFScreen', { url: item.url })}
+  		/>
+    </View>
 	);
 }
 
-function SectionListMediaItems({ title, navigation }) {
+function SectionListMediaItems({ item, navigation }) {
 	return (
 		<View style={styles.item}>
-      		<Button
-      			title={ title }
-                style={ styles.item }
-      			onPress={() => navigation.navigate('VideoScreen')}
-      		/>
-    	</View>
+  		<Button
+  			title={ item.title }
+        style={ styles.item }
+  			onPress={() => navigation.navigate('VideoScreen', { url: item.url })}
+  		/>
+  	</View>
 	);
 }
 
 function HomeScreen({ navigation }) {
-    return (
-  		<View style={styles.container}>
-    		<View style={styles.rowContainer}>
-	      		<Image source={logo} style={styles.logo}/>
-      		</View>
-          	<View style={styles.rowContainer}>
-          		<Button
-	      			title={'Files'}
-        			style={styles.button}
-          			onPress={() => navigation.navigate('FileScreen')}
-      			/>
-      			<Button
-	      			title={'Videos'}
-        			style={styles.button}
-          			onPress={() => navigation.navigate('MediaScreen')}
-      			/>
-          	</View>
+  return (
+		<View style={styles.container}>
+  		<View style={styles.rowContainer}>
+      		<Image source={logo} style={styles.logo}/>
     	</View>
+      <View style={styles.rowContainer}>
+        <Button
+      		title={'Files'}
+      		style={styles.HomeButton}
+        		onPress={() => navigation.navigate('FileScreen')}
+    		/>
+  			<Button
+    			title={'Videos'}
+    			titleStyle={ styles.buttonText }
+    			style={ styles.button }
+      		onPress={() => navigation.navigate('MediaScreen')}
+  			/>
+      </View>
+  	</View>
 	);
 }
 
@@ -76,14 +133,14 @@ function FileScreen({ navigation }) {
 	return (
 		<View style={styles.pdf}>
 			<View style={styles.rowContainer}>
-          		<SectionList
-					sections={PDF_DATA}
-					keyExtractor={(item, index) => item + index}
-    				renderItem={({ item }) => <SectionListPDFItems title={item} navigation={navigation}/>}
-    				renderSectionHeader={({ section: { title } }) =>
-    					(<Text style={styles.sectionHeader}>{title}</Text>)}
+    		<SectionList
+          sections={PDF_DATA}
+          keyExtractor={(item, index) => item + index}
+				  renderItem={({ item }) => <SectionListPDFItems item={item} navigation={navigation}/>}
+				  renderSectionHeader={({ section: { title } }) =>
+          (<Text style={styles.sectionHeader}>{title}</Text>)}
 				/>
-          	</View>
+      </View>
 		</View>
 	);
 }
@@ -92,41 +149,41 @@ function MediaScreen({ navigation }) {
 	return (
 		<View style={styles.pdf}>
 			<View style={styles.rowContainer}>
-          		<SectionList
-					sections={Media_DATA}
-					keyExtractor={(item, index) => item + index}
-    				renderItem={({ item }) => <SectionListMediaItems title={item} navigation={navigation}/>}
-    				renderSectionHeader={({ section: { title } }) =>
-    					(<Text style={styles.sectionHeader}>{title}</Text>)}
-				/>
-          	</View>
+    		<SectionList
+  		    sections={Media_DATA}
+          keyExtractor={(item, index) => item + index}
+          renderItem={({ item }) => <SectionListMediaItems item={item} navigation={navigation}/>}
+          renderSectionHeader={({ section: { title } }) =>
+          (<Text style={styles.sectionHeader}>{title}</Text>)}
+        />
+      </View>
 		</View>
 	);
 }
 
-function PDFScreen() {
+function PDFScreen({ url }) {
 	return (
 		<View style={styles.pdf}>
 			<PDFReader
 				source={{
-					uri: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf',
+					uri: url,
 				}}
 			/>
 		</View>
 	);
 }
 
-function VideoScreen() {
+function VideoScreen({ url }) {
 	return (
 		<View style={styles.video}>
-      		<Video
-  				source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-  				rate={1.0}
-  				volume={1.0}
-  				isMuted={false}
-  				resizeMode="cover"
-  				shouldPlay
-  				style={{ width: 300, height: 300 }}
+  		<Video
+    		source={{ uri: url }}
+    		rate={1.0}
+    		volume={1.0}
+    		isMuted={false}
+    		resizeMode="cover"
+    		shouldPlay
+    		style={{ width: 300, height: 300 }}
 			/>
 		</View>
 	);
@@ -151,68 +208,68 @@ function App() {
 export default App;
 
 const styles = StyleSheet.create({
-  	rowContainer: {
+	rowContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-  	},
-  	container: {
+	},
+	container: {
 		flexDirection: 'column',
-      	flex: 1,
-      	backgroundColor: '#fff',
-      	alignItems: 'center',
-      	justifyContent: 'flex-start',
-  	},
-  	button: {
+  	flex: 1,
+  	backgroundColor: '#fff',
+  	alignItems: 'center',
+  	justifyContent: 'flex-start',
+	},
+	button: {
 		flex: 1,
 		margin: 50,
-		marginTop: 70,
+		marginTop: 20,
 		padding: 20,
 		alignItems: 'center',
 		borderRadius: 5,
-      	justifyContent: 'center',
-      	backgroundColor: 'gray',
-  	},
-  	buttonText: {
+  	justifyContent: 'center',
+  	backgroundColor: 'gray',
+	},
+	buttonText: {
 		color: 'orange',
 		fontSize: 20,
-  	},
-  	logo: {
+	},
+	logo: {
 		flex: 4,
 		padding: 50,
 		marginTop: 20,
-      	width: 300,
-      	height: 100,
-      	resizeMode: "contain",
-  	},
-  	search: {
+  	width: 300,
+  	height: 100,
+  	resizeMode: "contain",
+	},
+	search: {
 		backgroundColor: '#dcdcdc',
 		flex: 1,
 		padding: 20,
  		marginBottom: 20,
-  	},
-  	item: {
+	},
+	item: {
 		padding: 10,
 		fontSize: 20,
-  	},
-  	sectionHeader: {
-  	    paddingTop: 2,
-  	    paddingLeft: 10,
-  	    paddingRight: 10,
-  	    paddingBottom: 2,
-  	    fontSize: 20,
-  	    fontWeight: 'bold',
-  	    backgroundColor: 'rgba(247,247,247,1.0)',
+	},
+	sectionHeader: {
+    paddingTop: 2,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 2,
+    fontSize: 20,
+    fontWeight: 'bold',
+    backgroundColor: 'rgba(247,247,247,1.0)',
 	},
 	pdf: {
-        flex:1,
-        width:Dimensions.get('window').width,
-        height:Dimensions.get('window').height,
-    },
-    video: {
-    	flex: 1,
-   	    backgroundColor: '#fff',
-   	    alignItems: 'center',
-   	    justifyContent: 'center',
-    },
+    flex:1,
+    width:Dimensions.get('window').width,
+    height:Dimensions.get('window').height,
+  },
+  video: {
+  	flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
