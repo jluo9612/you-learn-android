@@ -83,8 +83,6 @@ const Media_DATA = [
 ];
 
 function SectionListPDFItems({ item, navigation }) {
-  console.log("item.url:", item.url);
-  // const [item.title, item.url] = React.useState('');
 	return (
 		<View style={ styles.item }>
   		<Button
@@ -97,7 +95,6 @@ function SectionListPDFItems({ item, navigation }) {
 }
 
 function SectionListMediaItems({ item, navigation }) {
-  console.log("item.url", item.url);
 	return (
 		<View style={ styles.item }>
   		<Button
@@ -111,29 +108,26 @@ function SectionListMediaItems({ item, navigation }) {
 
 function HomeScreen({ navigation }) {
   return (
-		<View style={styles.container}>
+		<View style={styles.logoCont}>
   		<View style={styles.rowContainer}>
       		<Image source={logo} style={styles.logo}/>
     	</View>
-      <View style={styles.rowContainer}>
-        <Button
-      		title={'Files'}
-      		style={styles.HomeButton}
-        		onPress={() => navigation.navigate('FileScreen')}
-    		/>
-  			<Button
-    			title={'Videos'}
-    			titleStyle={ styles.buttonText }
-    			style={ styles.button }
-      		onPress={() => navigation.navigate('MediaScreen')}
-  			/>
+      <View style={styles.homeContainer}>
+        <TouchableOpacity onPress={ () => navigation.navigate('FileScreen')} >
+          <Text style={ styles.HomeButton }>Files</Text>
+        </TouchableOpacity>
+  			<TouchableOpacity onPress={ () => navigation.navigate('MediaScreen') }>
+          <Text style={ styles.HomeButton }>Videos</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={ () => navigation.navigate('AboutScreen') }>
+          <Text style={ styles.HomeButton }>About</Text>
+        </TouchableOpacity>
       </View>
   	</View>
 	);
 }
 
 function FileScreen({ navigation }) {
-  console.log("PDF_DATA:", PDF_DATA);
 	return (
 		<View style={styles.pdf}>
 			<View style={styles.rowContainer}>
@@ -165,9 +159,21 @@ function MediaScreen({ navigation }) {
 	);
 }
 
+function AboutScreen({ navigation }) {
+  return (
+    <View style={styles.logoCont}>
+      <View style={styles.rowContainer}>
+          <Image source={logo} style={styles.logo}/>
+      </View>
+      <View style={styles.rowContainer}>
+        <Text>About me!</Text>
+      </View>
+    </View>
+  );
+}
+
 function PDFScreen({ route }) {
 	const { url } = route.params;
-  console.log("url:", url);
   return (
 		<View style={styles.pdf}>
 			<PDFReader
@@ -181,7 +187,6 @@ function PDFScreen({ route }) {
 
 function VideoScreen({ route }) {
   const { url } = route.params;
-  console.log("url:", url);
 	return (
 		<View style={styles.video}>
   		<Video
@@ -205,6 +210,7 @@ function App() {
 			<Stack.Navigator initialRouteName="HomeScreen">
 				<Stack.Screen name="HomeScreen" component={ HomeScreen } />
 				<Stack.Screen name="FileScreen" component={ FileScreen }/>
+        <Stack.Screen name="AboutScreen" component={ AboutScreen }/>
 				<Stack.Screen name="MediaScreen" component={ MediaScreen }/>
 				<Stack.Screen name="PDFScreen" component={ PDFScreen }/>
 				<Stack.Screen name="VideoScreen" component={ VideoScreen }/>
@@ -216,18 +222,41 @@ function App() {
 export default App;
 
 const styles = StyleSheet.create({
-	rowContainer: {
-		flexDirection: 'row',
-		justifyContent: 'space-between',
+	homeContainer: {
+    flex: 5,
+		flexDirection: 'column',
+		justifyContent: 'center',
 		alignItems: 'center',
 	},
+  rowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  logoCont: {
+    flexDirection: 'column',
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
 	container: {
 		flexDirection: 'column',
   	flex: 1,
   	backgroundColor: '#fff',
   	alignItems: 'center',
-  	justifyContent: 'flex-start',
+  	justifyContent: 'center',
 	},
+  HomeButton: {
+    margin: 50,
+    marginTop: 20,
+    padding: 20,
+    alignItems: 'center',
+    borderRadius: 5,
+    color: 'purple',
+    fontSize: 40,
+    fontFamily: 'Helvetica',
+  },
 	button: {
 		flex: 1,
 		margin: 50,
