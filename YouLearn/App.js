@@ -9,6 +9,9 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Video } from 'expo-av';
+// import { diseasePrevention, feminineHealth,
+//   lifeSkills, sexualEducation, wash, asl,
+//   promoPDF, promoVideos, PDF_DATA, Media_DATA } from './data.js';
 
 const diseasePrevention = [
   {title: 'Cholera Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
@@ -69,27 +72,27 @@ const promoVideos = [
 ];
 
 const PDF_DATA = [
-	{title: 'Disease Prevention', data: diseasePrevention},
-	{title: 'Feminine Health', data: feminineHealth},
-	{title: 'Life Skills', data: lifeSkills},
-	{title: 'Sexual Education', data: sexualEducation},
+  {title: 'Disease Prevention', data: diseasePrevention},
+  {title: 'Feminine Health', data: feminineHealth},
+  {title: 'Life Skills', data: lifeSkills},
+  {title: 'Sexual Education', data: sexualEducation},
   {title: 'Promo', data: promoPDF},
-	{title: 'WASH', data: wash},
-	{title: 'ASL Dictionary', data: asl},
+  {title: 'WASH', data: wash},
+  {title: 'ASL Dictionary', data: asl},
 ];
 
 const Media_DATA = [
-	{title: 'Promo Videos', data: promoVideos},
+  {title: 'Promo Videos', data: promoVideos},
 ];
 
 function SectionListPDFItems({ item, navigation }) {
 	return (
 		<View style={ styles.item }>
-  		<Button
-  			title={ item.title }
-        style={ styles.item }
-  			onPress={() => navigation.navigate('PDFScreen', { url: item.url })}
-  		/>
+  		<TouchableOpacity
+        style={ styles.listItem }
+  			onPress={() => navigation.navigate('PDFScreen', { url: item.url })} >
+        <Text style={ styles.listItemText }>{ item.title }</Text>
+      </TouchableOpacity>
     </View>
 	);
 }
@@ -97,11 +100,11 @@ function SectionListPDFItems({ item, navigation }) {
 function SectionListMediaItems({ item, navigation }) {
 	return (
 		<View style={ styles.item }>
-  		<Button
-  			title={ item.title }
-        style={ styles.item }
-  			onPress={() => navigation.navigate('VideoScreen', { url: item.url })}
-  		/>
+      <TouchableOpacity
+        style={ styles.listItem }
+        onPress={() => navigation.navigate('VideoScreen', { url: item.url })} >
+        <Text style={ styles.listItemText }>{ item.title }</Text>
+      </TouchableOpacity>
   	</View>
 	);
 }
@@ -165,8 +168,18 @@ function AboutScreen({ navigation }) {
       <View style={styles.rowContainer}>
           <Image source={logo} style={styles.logo}/>
       </View>
-      <View style={styles.rowContainer}>
-        <Text>About me!</Text>
+      <View style={ styles.about }>
+        <Text style={ styles.aboutText }>About</Text>
+        <Text style={ styles.aboutText }>YouLearn is meant to provide informational
+        resources about life skills, disease prevention, feminine health, sexual
+        education, and other topics. YouLearn will get more resources and videos
+        over time.</Text>
+        <Text style={ styles.aboutText }>All information was provided by Rose
+        Academies, a non-profit organization working in Central and Eastern Africa’s
+        rural communities. Rose Academies educational programs are community based
+        and presented in a language understood by community members.</Text>
+        <Text style={ styles.aboutText }>We hope YouLearn will help you to become a
+        significant contributor to society.</Text>
       </View>
     </View>
   );
@@ -253,55 +266,60 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     borderRadius: 5,
-    color: 'purple',
+    color: 'darkorchid',
     fontSize: 40,
     fontFamily: 'Helvetica',
   },
-	button: {
-		flex: 1,
-		margin: 50,
-		marginTop: 20,
-		padding: 20,
-		alignItems: 'center',
-		borderRadius: 5,
-  	justifyContent: 'center',
-  	backgroundColor: 'gray',
-	},
-	buttonText: {
-		color: 'orange',
-		fontSize: 20,
-	},
 	logo: {
 		flex: 4,
 		padding: 50,
 		marginTop: 20,
   	width: 300,
   	height: 100,
-  	resizeMode: "contain",
+  	resizeMode: 'contain',
 	},
-	search: {
-		backgroundColor: '#dcdcdc',
-		flex: 1,
-		padding: 20,
- 		marginBottom: 20,
-	},
-	item: {
+  item: {
+    padding: 5,
+    backgroundColor: 'white',
+  },
+	listItem: {
 		padding: 10,
-		fontSize: 20,
+    backgroundColor: 'rgba(247,247,247,1.0)',
 	},
+  listItemText: {
+    fontSize: 20,
+    color: 'black',
+    fontFamily: 'Helvetica',
+  },
+  about: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  aboutText: {
+    flex: 1,
+    fontSize: 20,
+    color: 'black',
+    fontFamily: 'Helvetica',
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+  },
 	sectionHeader: {
     paddingTop: 2,
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 2,
-    fontSize: 20,
+    fontSize: 30,
+    color: 'white',
     fontWeight: 'bold',
-    backgroundColor: 'rgba(247,247,247,1.0)',
+    backgroundColor: 'darkorchid',//'rgba(247,247,247,1.0)',
+    fontFamily: 'Helvetica',
 	},
 	pdf: {
     flex:1,
     width:Dimensions.get('window').width,
     height:Dimensions.get('window').height,
+    backgroundColor: 'white',
   },
   video: {
   	flex: 1,
