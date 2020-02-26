@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { Alert, Button, SectionList, Image,
 	TouchableOpacity, StyleSheet, Text,
-	TextInput, View, Dimensions, FlatList } from 'react-native';
+	TextInput, View, Dimensions } from 'react-native';
 import logo from './assets/logo.png';
 import PDFReader from 'rn-pdf-reader-js';
 import { Navigation } from 'react-native-navigation';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Constants from 'expo-constants';
 import { Video } from 'expo-av';
+import * as Font from 'expo-font';
 // import { diseasePrevention, feminineHealth,
 //   lifeSkills, sexualEducation, wash, asl,
 //   promoPDF, promoVideos, PDF_DATA, Media_DATA } from './data.js';
@@ -84,6 +86,8 @@ const PDF_DATA = [
 const Media_DATA = [
   {title: 'Promo Videos', data: promoVideos},
 ];
+
+const {height, width} = Dimensions.get('window');
 
 function SectionListPDFItems({ item, navigation }) {
 	return (
@@ -180,6 +184,7 @@ function AboutScreen({ navigation }) {
         and presented in a language understood by community members.</Text>
         <Text style={ styles.aboutText }>We hope YouLearn will help you to become a
         significant contributor to society.</Text>
+        <Text>{"\n"}{"\n"}{"\n"}{"\n"}</Text>
       </View>
     </View>
   );
@@ -202,34 +207,49 @@ function VideoScreen({ route }) {
   const { url } = route.params;
 	return (
 		<View style={styles.video}>
-  		<Video
-    		source={{ uri: url }}
-    		rate={1.0}
-    		volume={1.0}
-    		isMuted={false}
-    		resizeMode="cover"
-    		shouldPlay
-    		style={{ width: 300, height: 300 }}
-			/>
+        <Video
+          source={{
+            uri: url,
+          }}
+          rate={1.0}
+          volume={1.0}
+          isMuted={false}
+          useNativeControls
+          resizeMode="contain"
+          shouldPlay
+          isLooping={false}
+          style={{
+            height: '100%',
+            width: '100%',
+          }}
+        />
 		</View>
 	);
 }
 
 const Stack = createStackNavigator();
 
-function App() {
-	return (
-		<NavigationContainer>
-			<Stack.Navigator initialRouteName="HomeScreen">
-				<Stack.Screen name="HomeScreen" component={ HomeScreen } />
-				<Stack.Screen name="FileScreen" component={ FileScreen }/>
-        <Stack.Screen name="AboutScreen" component={ AboutScreen }/>
-				<Stack.Screen name="MediaScreen" component={ MediaScreen }/>
-				<Stack.Screen name="PDFScreen" component={ PDFScreen }/>
-				<Stack.Screen name="VideoScreen" component={ VideoScreen }/>
-			</Stack.Navigator>
-		</NavigationContainer>
-	);
+class App extends React.Component {
+  componentDidMount() {
+    Font.loadAsync({
+      'Helvetica': require('./assets/fonts/Helvetica.ttf'),
+    });
+  }
+
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomeScreen">
+          <Stack.Screen name="HomeScreen" component={ HomeScreen } />
+          <Stack.Screen name="FileScreen" component={ FileScreen }/>
+          <Stack.Screen name="AboutScreen" component={ AboutScreen }/>
+          <Stack.Screen name="MediaScreen" component={ MediaScreen }/>
+          <Stack.Screen name="PDFScreen" component={ PDFScreen }/>
+          <Stack.Screen name="VideoScreen" component={ VideoScreen }/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
 export default App;
@@ -317,14 +337,15 @@ const styles = StyleSheet.create({
 	},
 	pdf: {
     flex:1,
-    width:Dimensions.get('window').width,
-    height:Dimensions.get('window').height,
+    width: width,
+    height: height,
     backgroundColor: 'white',
   },
   video: {
-  	flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flex: 1,
     justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+    padding: 8,
   },
 });
