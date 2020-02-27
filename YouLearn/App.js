@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Alert, Button, SectionList, Image,
+import { SectionList, Image,
 	TouchableOpacity, StyleSheet, Text,
-	TextInput, View, Dimensions } from 'react-native';
+	View, Dimensions, ScrollView } from 'react-native';
 import logo from './assets/logo.png';
 import PDFReader from 'rn-pdf-reader-js';
 import { Navigation } from 'react-native-navigation';
@@ -172,21 +172,21 @@ function AboutScreen({ navigation }) {
       <View style={styles.rowContainer}>
           <Image source={logo} style={styles.logo}/>
       </View>
-      <View style={ styles.about }>
-        <Text style={ styles.aboutText }>About</Text>
-        <Text style={ styles.aboutText }>YouLearn is meant to provide informational
-        resources about life skills, disease prevention, feminine health, sexual
-        education, and other topics. YouLearn will get more resources and videos
-        over time.</Text>
-        <Text style={ styles.aboutText }>All information was provided by Rose
-        Academies, a non-profit organization working in Central and Eastern Africa’s
-        rural communities. Rose Academies educational programs are community based
-        and presented in a language understood by community members.</Text>
-        <Text style={ styles.aboutText }>We hope YouLearn will help you to become a
-        significant contributor to society.</Text>
-        <Text>{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+        <ScrollView contentContainerStyle={ styles.about }>
+          <Text style={ styles.aboutText }>About</Text>
+          <Text style={ styles.aboutText }>YouLearn is meant to provide informational
+          resources about life skills, disease prevention, feminine health, sexual
+          education, and other topics. YouLearn will get more resources and videos
+          over time.</Text>
+          <Text style={ styles.aboutText }>All information was provided by Rose
+          Academies, a non-profit organization working in Central and Eastern Africa’s
+          rural communities. Rose Academies educational programs are community based
+          and presented in a language understood by community members.</Text>
+          <Text style={ styles.aboutText }>We hope YouLearn will help you to become a
+          significant contributor to society.</Text>
+          <Text>{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+        </ScrollView>
       </View>
-    </View>
   );
 }
 
