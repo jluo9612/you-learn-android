@@ -16,36 +16,35 @@ import * as Font from 'expo-font';
 //   promoPDF, promoVideos, PDF_DATA, Media_DATA } from './data.js';
 
 const diseasePrevention = [
-  {title: 'Cholera Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Diabetes', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Leishmaniasis', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Malaria', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Cholera Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Pneumonia', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Polio', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Smallpox', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'STI Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Tetanus', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Tuberculosis Droplet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Tuberculosis', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Zika Prevention', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Cholera Prevention', url: 'http://192.168.4.1/files/Disease_Prevention/Cholera_prevention.pdf'},
+  {title: 'Diabetes', url: 'http://192.168.4.1/files/Disease_Prevention/Diabetes.pdf'},
+  {title: 'Leishmaniasis', url: 'http://192.168.4.1/files/Disease_Prevention/Leishmaniasis.pdf'},
+  {title: 'Malaria', url: 'http://192.168.4.1/files/Disease_Prevention/malaria_griffin.pdf'},
+  {title: 'Pneumonia', url: 'http://192.168.4.1/files/Disease_Prevention/Pneumonia.pdf'},
+  {title: 'Polio', url: 'http://192.168.4.1/files/Disease_Prevention/Polio.pdf'},
+  {title: 'Smallpox', url: 'http://192.168.4.1/files/Disease_Prevention/Smallpox.pdf'},
+  {title: 'STI Prevention', url: 'http://192.168.4.1/files/Disease_Prevention/STIs_Prevention.pdf'},
+  {title: 'Tetanus', url: 'http://192.168.4.1/files/Disease_Prevention/Tetanus_Bella.pdf'},
+  {title: 'Tuberculosis Droplet', url: 'http://192.168.4.1/files/Disease_Prevention/Tuberculosis_droplet.pdf'},
+  {title: 'Tuberculosis', url: 'http://192.168.4.1/files/Disease_Prevention/Tuberculosis.pdf'},
+  {title: 'Zika Prevention', url: 'http://192.168.4.1/files/Disease_Prevention/Zika_Prevention.pdf'},
 ];
 
 const feminineHealth = [
-  {title: 'Hedhi Help', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Hedhi Help Kiswahili', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Hedhi Help Swahili', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Menstrual Hygiene', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Rose’s Washable Sanitary Pads 2019', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Rose’s Washable Sanitary Pads 2018', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Sustainable Solutions', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Hedhi Help', url: 'http://192.168.4.1/files/FeminineHealth/HedhiHelp_en.pdf'},
+  {title: 'Hedhi Help Kiswahili', url: 'http://192.168.4.1/files/FeminineHealth/HedhiHelp_Kiswahili.pdf'},
+  {title: 'Hedhi Help Swahili', url: 'http://192.168.4.1/files/FeminineHealth/HedhiHelp_Swahili.pdf'},
+  {title: 'Menstrual Hygiene', url: 'http://192.168.4.1/files/FeminineHealth/Menstrual%20Hygiene%20Class.pdf'},
+  {title: 'Rose’s Washable Sanitary Pads 2019', url: 'http://192.168.4.1/files/FeminineHealth/PadPattern_2019B.pdf'},
+  {title: 'Rose’s Washable Sanitary Pads 2018', url: 'http://192.168.4.1/files/FeminineHealth/PadPattern_rev_2018.pdf'},
+  {title: 'Sustainable Solutions', url: 'http://192.168.4.1/files/FeminineHealth/Reusablepad_guide.pdf'},
 ];
 
 const lifeSkills = [
-  {title: 'A Budget is easy as 123', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Agriculture 101', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Expressing Emotions Through Art', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Gender Club Formation Guide', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'A Budget is easy as 123', url: 'http://192.168.4.1/files/LifeSkills/'},
+  {title: 'Agriculture 101', url: 'http://192.168.4.1/files/LifeSkills/'},
+  {title: 'Expressing Emotions Through Art', url: 'http://192.168.4.1/files/LifeSkills/'},
+  {title: 'Gender Club Formation Guide', url: 'http://192.168.4.1/files/LifeSkills/'},
 ];
 
 const sexualEducation = [
@@ -55,10 +54,10 @@ const sexualEducation = [
 ];
 
 const wash = [
-  {title: 'Tippy Tap Project', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Coloring WASH Booklet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'WASH Program', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Food Safety', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Tippy Tap Project', url: 'http://192.168.4.1/files/WASH/'},
+  {title: 'Coloring WASH Booklet', url: 'http://192.168.4.1/files/WASH/'},
+  {title: 'WASH Program', url: 'http://192.168.4.1/files/WASH/'},
+  {title: 'Food Safety', url: 'http://192.168.4.1/files/WASH/'},
 ];
 
 const asl = [{title: 'ASL Dictionary', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'}];
@@ -68,9 +67,9 @@ const promoPDF = [
 ];
 
 const promoVideos = [
-  {title: 'Breaking Barriers', url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'},
-  {title: 'Leaving No One Behind', url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'},
-  {title: 'Rose Empowers Medium', url: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'},
+  {title: 'Breaking Barriers', url: 'http://192.168.4.1/files/Promo_videos/Breaking_Barriers.mp4'},
+  {title: 'Leaving No One Behind', url: 'http://192.168.4.1/files/Promo_videos/Leaving_No_One_Behind3.mp4'},
+  {title: 'Rose Empowers Medium', url: 'http://192.168.4.1/files/Promo_videos/Rose%20Empowers_Medium.mp4'},
 ];
 
 const PDF_DATA = [
@@ -288,7 +287,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: 'darkorchid',
     fontSize: 40,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
 	logo: {
 		flex: 4,
@@ -309,7 +308,7 @@ const styles = StyleSheet.create({
   listItemText: {
     fontSize: 20,
     color: 'black',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   about: {
     flexDirection: 'column',
@@ -320,7 +319,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 20,
     color: 'black',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
     alignItems: 'stretch',
     justifyContent: 'space-around',
   },
@@ -333,7 +332,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     backgroundColor: 'darkorchid',//'rgba(247,247,247,1.0)',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
 	},
 	pdf: {
     flex:1,

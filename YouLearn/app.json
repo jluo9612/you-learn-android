@@ -25,6 +25,10 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "package": "com.roseacademies.youlearn",
+      "versionCode": 1
+    },
   }
 }
