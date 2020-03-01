@@ -41,29 +41,29 @@ const feminineHealth = [
 ];
 
 const lifeSkills = [
-  {title: 'A Budget is easy as 123', url: 'http://192.168.4.1/files/LifeSkills/'},
-  {title: 'Agriculture 101', url: 'http://192.168.4.1/files/LifeSkills/'},
-  {title: 'Expressing Emotions Through Art', url: 'http://192.168.4.1/files/LifeSkills/'},
-  {title: 'Gender Club Formation Guide', url: 'http://192.168.4.1/files/LifeSkills/'},
+  {title: 'A Budget is easy as 123', url: 'http://192.168.4.1/files/LifeSkills/A_Budget_is_easy_as_123.pdf'},
+  {title: 'Agriculture 101', url: 'http://192.168.4.1/files/LifeSkills/Agriculture_101.pdf'},
+  {title: 'Expressing Emotions Through Art', url: 'http://192.168.4.1/files/LifeSkills/ExpessionsinArt.pdf'},
+  {title: 'Gender Club Formation Guide', url: 'http://192.168.4.1/files/LifeSkills/GenderClub_Guidelines.pdf'},
 ];
 
 const sexualEducation = [
-  {title: 'Boys Puberty Pamphlet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Girls Puberty Pamphlet', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
-  {title: 'Puberty Coloring Book', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Boys Puberty Pamphlet', url: 'http://192.168.4.1/files/Sexual_Education/Rose_Boys_Puberty_Pamphlet.pdf'},
+  {title: 'Girls Puberty Pamphlet', url: 'http://192.168.4.1/files/Sexual_Education/ROSE_Girls_PubertyPamphlet.pdf'},
+  {title: 'Puberty Coloring Book', url: 'http://192.168.4.1/files/Sexual_Education/Rose_Puberty_ColorBook.pdf'},
 ];
 
 const wash = [
-  {title: 'Tippy Tap Project', url: 'http://192.168.4.1/files/WASH/'},
-  {title: 'Coloring WASH Booklet', url: 'http://192.168.4.1/files/WASH/'},
-  {title: 'WASH Program', url: 'http://192.168.4.1/files/WASH/'},
-  {title: 'Food Safety', url: 'http://192.168.4.1/files/WASH/'},
+  {title: 'Tippy Tap Project', url: 'http://192.168.4.1/files/WASH/Rose_Tippy_Tap_Project.pdf'},
+  {title: 'Coloring WASH Booklet', url: 'http://192.168.4.1/files/WASH/Rose_Coloring_WASH_Booklet.pdf'},
+  {title: 'WASH Program', url: 'http://192.168.4.1/files/WASH/Rose_WASHProgram.pdf'},
+  {title: 'Food Safety', url: 'http://192.168.4.1/files/WASH/RoseFoodSafety.pdf'},
 ];
 
-const asl = [{title: 'ASL Dictionary', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'}];
+const asl = [{title: 'ASL Dictionary', url: 'http://192.168.4.1/files/ASL_dictionary_en.pdf'}];
 
 const promoPDF = [
-  {title: 'Improving Healthcare Knowledge with Innovative Technology', url: 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf'},
+  {title: 'Improving Healthcare Knowledge with Innovative Technology', url: 'http://192.168.4.1/files/Promo_videos/Saving_Lives_technology.pdf'},
 ];
 
 const promoVideos = [
