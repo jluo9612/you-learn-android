@@ -3,6 +3,8 @@ import { SectionList, Image,
 	TouchableOpacity, StyleSheet, Text,
 	View, Dimensions, ScrollView } from 'react-native';
 import logo from './assets/logo.png';
+import fih from './assets/FIH.png';
+import rose from './assets/RoseAcademies.jpg';
 import PDFReader from 'rn-pdf-reader-js';
 import { Navigation } from 'react-native-navigation';
 import 'react-native-gesture-handler';
@@ -172,18 +174,19 @@ function AboutScreen({ navigation }) {
           <Image source={logo} style={styles.logo}/>
       </View>
         <ScrollView contentContainerStyle={ styles.about }>
+          <View style={{flexDirection:'row', paddingLeft: 10, paddingBottom: 10}}>
+            <Image style={styles.tinyLogo} source={fih}/>
+            <Image style={styles.tinyLogo} source={rose}/>
+          </View>
+          <Text style={ styles.breakLine }>{"\n"}</Text>
           <Text style={ styles.aboutText }>About</Text>
-          <Text style={ styles.aboutText }>YouLearn is meant to provide informational
-          resources about life skills, disease prevention, feminine health, sexual
-          education, and other topics. YouLearn will get more resources and videos
-          over time.</Text>
-          <Text style={ styles.aboutText }>All information was provided by Rose
-          Academies, a non-profit organization working in Central and Eastern Africa’s
-          rural communities. Rose Academies educational programs are community based
-          and presented in a language understood by community members.</Text>
-          <Text style={ styles.aboutText }>We hope YouLearn will help you to become a
-          significant contributor to society.</Text>
-          <Text>{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+          <Text style={ styles.breakLine }>{"\n"}</Text>
+          <Text style={ styles.aboutText }>YouLearn is an educational app created by students at Santa Clara University’s Frugal Innovation Hub. Their mission is to engage students in technological and humanitarian projects worldwide.</Text>
+          <Text style={ styles.breakLine }>{"\n"}</Text>
+          <Text style={ styles.aboutText }>All information was provided by Rose Academies, a non-profit organization working in Central and Eastern Africa’s rural communities. Rose Academies educational programs are community based and presented in a language understood by community members.</Text>
+          <Text style={ styles.breakLine }>{"\n"}</Text>
+          <Text style={ styles.aboutText }>We hope YouLearn will help you to become a significant contributor to society.</Text>
+          <Text style={ styles.breakLine }>{"\n"}</Text>
         </ScrollView>
       </View>
   );
@@ -319,11 +322,24 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 20,
     color: 'black',
-    // fontFamily: 'Helvetica',
-    alignItems: 'stretch',
     justifyContent: 'space-around',
+
+    // fontFamily: 'Helvetica',
+    // alignItems: 'stretch',
   },
-	sectionHeader: {
+  breakLine: {
+    fontSize: 6,
+  },
+  tinyLogo: {
+      flex: 4,
+      //padding: 50,
+      //marginTop: 20,
+      width: 140,
+      height: 50,
+      resizeMode: 'contain',
+      //padding: 5,
+  },
+  sectionHeader: {
     paddingTop: 2,
     paddingLeft: 10,
     paddingRight: 10,
@@ -334,7 +350,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'darkorchid',//'rgba(247,247,247,1.0)',
     // fontFamily: 'Helvetica',
 	},
-	pdf: {
+  pdf: {
     flex:1,
     width: width,
     height: height,
